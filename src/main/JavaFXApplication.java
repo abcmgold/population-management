@@ -34,11 +34,10 @@ public class JavaFXApplication extends Application {
 //      primaryStage.getScene().getRoot().setEffect(new DropShadow());
 
         primaryStage.show();
-
     }
 
     /**
-     * @param args the command line arguments
+     * @param args the command line argumentsjadm
      */
     public static void main(String[] args) {
         launch(args);

@@ -183,6 +183,7 @@ public class ThemHoKhauController extends AnimationTimer implements Initializabl
         start();
     }
 
+
     public void setNhanKhauBean(NhanKhauBean nhanKhauBean) {
         this.nhanKhauBean = nhanKhauBean;
 //        if (this.nhanKhauBean.getChungMinhThuModel().getSoCMT() != null){

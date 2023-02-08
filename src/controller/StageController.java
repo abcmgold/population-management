@@ -130,7 +130,48 @@ public class StageController {
         stage.show();
     }
     
+     // lam phan nhan khau
+     
     @FXML
+    public void switchToDangKyTamVangScene(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/DangKyTamVang.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        stage.show();
+    }
+     
+    @FXML
+    public void switchToDangKyTamTruScene(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/DangKyTamTru.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        stage.show();
+    }
+     
+    @FXML
+    public void switchToKhaiTuScene(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/KhaiTu.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void switchToChiTietNhanKhauScene(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ChiTietNhanKhau.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+
     public void switchToChuyenDi(ActionEvent e) throws  IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/view/HoKhauChuyenDi.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -156,10 +197,9 @@ public class StageController {
         stage.show();
     }
      @FXML
-    void switchToTinhDiemScene(ActionEvent e) throws IOException {
+    public void switchToTinhDiemScene(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/TinhDiem.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
         scene.getStylesheets().add("/CSS/globalStyle.css");
         stage.setScene(scene);
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();

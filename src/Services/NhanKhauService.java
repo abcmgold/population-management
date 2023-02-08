@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Services;
+
 
 import bean.NhanKhauBean;
 import java.sql.Connection;
@@ -18,7 +15,7 @@ import model.TieuSuModel;
 
 /**
  *
- * @author Admin
+ * @author Hai
  */
 public class NhanKhauService {
     public NhanKhauBean getNhanKhau(String cmt) {
@@ -98,11 +95,19 @@ public class NhanKhauService {
         return nhanKhauBean;
     }
     
+    /* 
+     * Ham lay ra 1 nhan khau trong db bang chung minh thu
+     * 
+     */
+
+    
+    
      // lay danh sach 10 nhan khau moi duoc them vao
     public List<NhanKhauBean> getListNhanKhau() {
         List<NhanKhauBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
+
             String query = "SELECT * FROM nhan_khau INNER JOIN chung_minh_thu ON nhan_khau.ID = chung_minh_thu.idNhanKhau ORDER BY ngayTao DESC";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
@@ -111,6 +116,7 @@ public class NhanKhauService {
                 NhanKhauModel nhanKhau = nhanKhauBean.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("ID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
+
                 nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setDiaChiHienNay(rs.getString("diaChiHienNay"));
@@ -279,6 +285,7 @@ public class NhanKhauService {
                 NhanKhauModel nhanKhau = temp.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("ID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
+
                 nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setDiaChiHienNay(rs.getString("diaChiHienNay"));
