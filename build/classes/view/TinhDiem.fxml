@@ -174,7 +174,7 @@
                                     <TableColumn fx:id="check_col" maxWidth="1.7976931348623157E308" prefWidth="55.0" />
                                 </columns>
                               </TableView>
-                              <Button layoutX="601.0" layoutY="95.0" onAction = "#diemDanh" mnemonicParsing="false" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #0A4969;" text="Điểm danh" textFill="WHITE">
+                              <Button layoutX="601.0" layoutY="95.0" mnemonicParsing="false" onAction="#diemDanh" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #0A4969;" text="Điểm danh" textFill="WHITE">
                                  <font>
                                     <Font size="13.0" />
                                  </font>

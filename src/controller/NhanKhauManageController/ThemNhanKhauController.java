@@ -347,8 +347,8 @@ public class ThemNhanKhauController implements Initializable {
             temp.setNoiLamViec(noiLamViec_TextField.getText());
             temp.setIdNguoiTao(1);
 
-            boolean res = this.addNewPeople(new NhanKhauBean(temp, cmt));
-
+//            boolean res = this.addNewPeople(new NhanKhauBean(temp, cmt));
+                boolean res = true;
             if (res) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Thông báo");

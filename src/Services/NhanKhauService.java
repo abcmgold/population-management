@@ -1,12 +1,10 @@
 package Services;
 
-import bean.*;
-import controller.*;
-import Services.*;
+
+import bean.NhanKhauBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -20,13 +18,6 @@ import model.TieuSuModel;
  * @author Hai
  */
 public class NhanKhauService {
-    
-    /* 
-     * Ham lay ra 1 nhan khau trong db bang chung minh thu
-     * 
-     */
-
-    
     public NhanKhauBean getNhanKhau(String cmt) {
         NhanKhauBean nhanKhauBean = new NhanKhauBean();  
         // truy cap db
@@ -104,12 +95,20 @@ public class NhanKhauService {
         return nhanKhauBean;
     }
     
+    /* 
+     * Ham lay ra 1 nhan khau trong db bang chung minh thu
+     * 
+     */
+
+    
+    
      // lay danh sach 10 nhan khau moi duoc them vao
     public List<NhanKhauBean> getListNhanKhau() {
         List<NhanKhauBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT * FROM nhan_khau INNER JOIN chung_minh_thu ON nhan_khau.ID = chung_minh_thu.idNhanKhau";
+
+            String query = "SELECT * FROM nhan_khau INNER JOIN chung_minh_thu ON nhan_khau.ID = chung_minh_thu.idNhanKhau ORDER BY ngayTao DESC";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
@@ -117,9 +116,8 @@ public class NhanKhauService {
                 NhanKhauModel nhanKhau = nhanKhauBean.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("ID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
-                nhanKhau.setNguyenQuan(rs.getString("nguyenQuan"));
-                nhanKhau.setDanToc(rs.getString("danToc"));
-                nhanKhau.setNgheNghiep(rs.getString("ngheNghiep"));
+
+                nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setDiaChiHienNay(rs.getString("diaChiHienNay"));
                 ChungMinhThuModel chungMinhThuModel = nhanKhauBean.getChungMinhThuModel();
@@ -287,9 +285,8 @@ public class NhanKhauService {
                 NhanKhauModel nhanKhau = temp.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("ID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
-                nhanKhau.setNguyenQuan(rs.getString("nguyenQuan"));
-                nhanKhau.setDanToc(rs.getString("danToc"));
-                nhanKhau.setNgheNghiep(rs.getString("ngheNghiep"));
+
+                nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setDiaChiHienNay(rs.getString("diaChiHienNay"));
                 
