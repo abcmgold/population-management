@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
 package main;
+
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,15 +24,16 @@ public class JavaFXApplication extends Application {
         Scene scene_login;
         scene_login = new Scene(login);
         scene_login.getStylesheets().add("/CSS/globalStyle.css");
-        
+
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene_login);
-//      primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setResizable(false);
+//        primaryStage.initStyle(StageStyle.TRANSPARENT);
+
         primaryStage.getScene().setFill(Color.TRANSPARENT);
 //      primaryStage.getScene().getRoot().setEffect(new DropShadow());
 
         primaryStage.show();
-        System.out.println(primaryStage.getHeight() +" " + primaryStage.getWidth());
     }
 
     /**
@@ -40,5 +42,5 @@ public class JavaFXApplication extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
