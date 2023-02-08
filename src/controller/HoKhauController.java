@@ -36,7 +36,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
-import model.HoKhau;
 
 /**
  *
@@ -81,22 +80,7 @@ public class HoKhauController implements Initializable {
     private Button thongke_btn;
     @FXML
     private Button quanlysh_btn;
-    @FXML
-    private TableView<?> hokhau_table1;
-    @FXML
-    private TableColumn<?, ?> sohokhau1;
-    @FXML
-    private TableColumn<?, ?> tenchuho1;
-    @FXML
-    private TableColumn<?, ?> diachi1;
-    @FXML
-    private TableView<?> hokhau_table11;
-    @FXML
-    private TableColumn<?, ?> sohokhau11;
-    @FXML
-    private TableColumn<?, ?> tenchuho11;
-    @FXML
-    private TableColumn<?, ?> diachi11;
+
 
     private void switchToHoKhauScene(ActionEvent e) throws IOException {
         sc.switchToHoKhauScene(e);
